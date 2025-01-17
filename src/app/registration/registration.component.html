@@ -1,0 +1,28 @@
+<form [formGroup]="registrationForm" (submit)="submitRegForm()">
+    <p-floatlabel variant="in">
+        <input pInputText id="firstName" autocomplete="off" formControlName="firstName" />
+        <label for="firstName">First Name</label>
+    </p-floatlabel>
+
+    <p-floatlabel variant="in">
+        <input pInputText id="mi" autocomplete="off" formControlName="mi" />
+        <label for="mi">MI</label>
+    </p-floatlabel>
+
+    <p-floatlabel variant="in">
+        <input pInputText id="lastName" autocomplete="off" formControlName="lastName" />
+        <label for="lastName">Last Name</label>
+    </p-floatlabel>
+
+    <p-floatlabel variant="in">
+        <input pInputText id="email" autocomplete="off" formControlName="email" />
+        <label for="email">Email</label>
+    </p-floatlabel>
+
+    <p-floatLabel variant="in">
+        <p-calendar formControlName="dob" id="dob" [touchUI]="true" />
+        <label for="dob">Birth Date</label>
+    </p-floatLabel>
+
+    <p-button label="Submit" type="submit" [disabled]="!this.registrationForm.valid" [loading]=submitting/>
+</form>
